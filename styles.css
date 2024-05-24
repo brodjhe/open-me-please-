@@ -1,0 +1,114 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.background {
+    background: linear-gradient(to bottom, #ff9999 0%, #ffcccc 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.heart-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.heart {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    transform: rotate(-45deg);
+    animation: float 6s ease-in-out infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -25px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 25px;
+}
+
+.heart:nth-child(1) {
+    animation-delay: 0s;
+    left: 20%;
+}
+
+.heart:nth-child(2) {
+    animation-delay: 1s;
+    left: 40%;
+}
+
+.heart:nth-child(3) {
+    animation-delay: 2s;
+    left: 60%;
+}
+
+.heart:nth-child(4) {
+    animation-delay: 3s;
+    left: 80%;
+}
+
+.heart:nth-child(5) {
+    animation-delay: 4s;
+    left: 50%;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(0) rotate(-45deg);
+    }
+}
+
+.content {
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
